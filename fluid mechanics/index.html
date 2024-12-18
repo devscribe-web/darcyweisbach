@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discharge Calculator for Two Pipes</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border-left: 5px solid #2196F3;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Discharge Calculator for Two Pipes</h1>
+    <div class="container">
+        <h3>Pipe 1</h3>
+        <label for="h1_pipe1">Initial Level (h1, cm)</label>
+        <input type="number" id="h1_pipe1" placeholder="Enter initial level">
+
+        <label for="h2_pipe1">Final Level (h2, cm)</label>
+        <input type="number" id="h2_pipe1" placeholder="Enter final level">
+
+        <label for="t_pipe1">Time (t, sec)</label>
+        <input type="number" id="t_pipe1" placeholder="Enter time in seconds">
+
+
+        <h3>Pipe 2</h3>
+        <label for="h1_pipe2">Initial Level (h1, cm)</label>
+        <input type="number" id="h1_pipe2" placeholder="Enter initial level">
+
+        <label for="h2_pipe2">Final Level (h2, cm)</label>
+        <input type="number" id="h2_pipe2" placeholder="Enter final level">
+
+        <label for="t_pipe2">Time (t, sec)</label>
+        <input type="number" id="t_pipe2" placeholder="Enter time in seconds">
+
+
+        <button id="calculate-discharge">Calculate Discharge</button>
+
+
+        <div id="discharge-pipe1" class="result hidden"></div>
+        <div id="discharge-pipe2" class="result hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friction Factor Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border-left: 5px solid #2196F3;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Friction Factor Calculator for Two Pipes</h1>
+    <div class="container">
+        <!-- Pipe 1 Input -->
+        <h3>Pipe 1</h3>
+        <label for="h1_pipe11">Initial Head (h1, cm):</label>
+        <input type="number" id="h1_pipe11" placeholder="Enter initial head">
+
+        <label for="h2_pipe11">Final Head (h2, cm):</label>
+        <input type="number" id="h2_pipe11" placeholder="Enter final head">
+
+        <label for="dia_pipe1">Diameter (cm):</label>
+        <input type="number" id="dia_pipe1" placeholder="Enter diameter">
+
+        <label for="length_pipe1">Length (m):</label>
+        <input type="number" id="length_pipe1" placeholder="Enter length in meters">
+
+        <label for="discharge_pipe1">Discharge (cm³/s):</label>
+        <input type="number" id="discharge_pipe1" placeholder="Enter discharge">
+
+        <!-- Pipe 2 Input -->
+        <h3>Pipe 2</h3>
+        <label for="h1_pipe22">Initial Head (h1, cm):</label>
+        <input type="number" id="h1_pipe22" placeholder="Enter initial head">
+
+        <label for="h2_pipe22">Final Head (h2, cm):</label>
+        <input type="number" id="h2_pipe22" placeholder="Enter final head">
+
+        <label for="dia_pipe2">Diameter (cm):</label>
+        <input type="number" id="dia_pipe2" placeholder="Enter diameter">
+
+        <label for="length_pipe2">Length (m):</label>
+        <input type="number" id="length_pipe2" placeholder="Enter length in meters">
+
+        <label for="discharge_pipe2">Discharge (cm³/s):</label>
+        <input type="number" id="discharge_pipe2" placeholder="Enter discharge">
+
+        <button id="calculate-btn">Calculate Friction Factors</button>
+
+        <!-- Results -->
+        <div id="result1" class="result hidden"></div>
+        <div id="result2" class="result hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+    
